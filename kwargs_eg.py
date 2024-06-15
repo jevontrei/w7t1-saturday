@@ -1,15 +1,11 @@
 def personal_details(**kwargs):
     for key, value in kwargs.items():
-        print(f"{key} --> {value}")
+        print(f"{key} ---> {value}")
 
-
-personal_details(name="Alice", age="25", address="Sydney")
-
+personal_details(name="Alice", address="Sydney")
 
 def myFunction(*onestar, **twostars):
     print("args: ", onestar)
     print("kwargs: ", twostars)
 
-
-# what's happening here?:
-myFunction("I", "love", "coding", first="I", second="love", third="coding!")
+myFunction('I', 'Love', 'Coding', first = "I", second = "love", third = "Coding!!!")

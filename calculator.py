@@ -1,35 +1,27 @@
-# def add(a, b):
-#     return a + b
+def add(a,b):
+    return a + b
 
+def subtract(a,b):
+    return a - b
 
-# def subtract(a, b):
-#     return a - b
+def multiply(a,b):
+    return a * b
 
-
-# def multiply(a, b):
-#     return a * b
-
-
-# def divide(a, b):
-#     if b == 0:
-#         return "Error! Division by zero."
-#     return a / b
-
-
-
-print("------------------")
-
+def divide(a,b):
+    if b == 0:
+        return "Error! Division by Zero"
+    return a / b
 
 def get_user_input():
     operation = input("Enter operation (+, -, *, /): ")
-    if operation not in ["+", "-", "*", "/"]:
-        print("Invalid operation")
+    if operation not in ['+', '-', '*', '/']:
+        print("Invalid Operation")
         return None, None, None
+
     a = float(input("Enter first number: "))
     b = float(input("Enter second number: "))
 
     return operation, a, b
-
 
 def main():
     while True:
@@ -37,27 +29,22 @@ def main():
         result = 0
         if operation is None:
             return 0
-        if operation == "+":
+        if operation == '+':
             result = add(num1, num2)
-        elif operation == "-":
+        elif operation == '-':
             result = subtract(num1, num2)
-        elif operation == "*":
+        elif operation == '*':
             result = multiply(num1, num2)
         else:
             result = divide(num1, num2)
-        print(f"The result is {result}.")
 
-        next_calculation = input("Do you want to do another? (yes/no): ")
+        print(f"The result is: {result}")
+
+        next_calculation = input("Do you want to perform another calculation? (yes/no): ") 
         if next_calculation.lower() != "yes":
             break
 
-
 main()
-
-
-
-print("------------------")
-
 
 # Using *args
 def add(*args):
@@ -66,26 +53,14 @@ def add(*args):
         sum += each
     return sum
 
-
 def subtract(*args):
     difference = 0
     for each in args:
         difference -= each
     return difference
 
-
 def multiply(*args):
-    # Must initialise as 1, not 0:
-    product = 1
+    multiply = 1
     for each in args:
-        product *= each
-    return product
-
-
-# def divide(*args):
-#     # Must initialise as 1, not 0:
-#     quotient = 1
-#     for each in args:
-#         if each != 0:
-#             quotient /= each
-#     return quotient
+        multiply *= each
+    return multiply
