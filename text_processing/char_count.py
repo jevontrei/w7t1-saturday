@@ -1,6 +1,5 @@
-def count_chars(text):
+def count_characters(text):
     return len(text)
 
-
-def count_unique_chars(text):
+def count_unique_characters(text):
     return (len(set(text.lower())))
